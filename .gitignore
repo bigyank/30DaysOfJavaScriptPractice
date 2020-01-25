@@ -110,3 +110,4 @@ dist
 .eslintrc.json
 package-lock.json
 .prettierrc 
+package.json
