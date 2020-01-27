@@ -90,3 +90,59 @@ const countries = [
 
 const uppCountries = countries.map(country => country.toUpperCase());
 console.table(uppCountries);
+
+// Using the above countries array, create an array for countries length
+
+const lenCountries = countries.map(country => country.length);
+console.table(lenCountries);
+
+// array with miltiple info of country
+const multCountries = countries.map(country => [
+    country,
+    country.slice(0, 3).toUpperCase(),
+    country.length
+]);
+
+console.table(multCountries);
+
+// country containing the word 'land'
+
+const landCountries = countries.filter(country => country.includes('land'));
+console.table(landCountries);
+
+const substrCon = countries.filter(
+    country => country.substr(country.length - 2) === 'ia'
+);
+
+console.log(substrCon);
+
+// longest name of country
+
+const lngCountry = countries.reduce((a, b) => {
+    return a.length > b.length ? a : b;
+});
+
+console.log(lngCountry);
+
+// countries with 5 letter
+
+const fivCountries = countries.filter(country => country.length === 5);
+console.log(fivCountries);
+
+// mern stack
+const mernStack = ['MongoDB', 'Express', 'React', 'Node'];
+const mern = mernStack.map(stack => stack.charAt(0).toUpperCase()).join('');
+
+console.log(mern);
+
+// full Stack
+const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+];
+
+// for (const item of fullStack) {
+//     for (const nditem of item) {
+//         console.log(nditem);
+//     }
+// }
