@@ -93,3 +93,25 @@ function hexGen() {
     return hexNum;
 }
 console.log(hexGen(100));
+
+// part 3
+function rgbGen() {
+    return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
+        Math.random() * 256
+    )},${Math.floor(Math.random() * 256)})`;
+}
+
+const colr = rgbGen();
+console.log(colr);
+
+// generate any hex and rgb
+function genMultCol(uColr, times) {
+    const finlArr = [];
+    for (let i = 0; i < times; i += 1) {
+        finlArr.push(uColr === 'rgb' ? rgbGen() : hexGen());
+    }
+    return finlArr;
+}
+
+const collColr = genMultCol('hex', 3);
+console.log(collColr);
