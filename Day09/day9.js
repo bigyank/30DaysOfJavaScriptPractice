@@ -65,3 +65,32 @@ const onlyPrice = products
   .filter(ele => typeof ele === 'number')
   .reduce((total, ele) => (total += ele));
 console.log(onlyPrice);
+
+// sum of price of products using only reduce
+// const priceRed = products.reduce((total, ele) => {
+//   typeof ele.price === 'number' ? (total += ele.price) : 1;
+// });
+
+// console.log(priceRed);
+
+// return an array of first ten countries.
+const firstTen = countries.filter(ele => countries.indexOf(ele) < 10);
+console.log(firstTen);
+
+// return an array of last 2 countries
+const lastTwo = countries.filter(
+  ele => [...countries].reverse().indexOf(ele) < 2
+);
+console.log(lastTwo);
+
+// count the number of letter
+const countLett = 'aaabbbccccccd'.split('').reduce((total, item) => {
+  total[item] ? total[item]++ : (total[item] = 1);
+  return total;
+}, {});
+
+const finalWord = Object.keys(countLett).filter(
+  element => countLett[element] === Math.max(...Object.values(countLett))
+);
+
+console.log(finalWord);
